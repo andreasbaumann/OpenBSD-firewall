@@ -186,6 +186,7 @@ cp -R /usr/sbin/arp $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/bgpctl $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/bgpd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/cron $MOUNTPOINT/usr/sbin/.
+cp -R /usr/sbin/config $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/dev_mkdb $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/dhcrelay $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/dig $MOUNTPOINT/usr/sbin/.
@@ -241,6 +242,8 @@ if test -f /usr/local/bin/wol; then
 	cp -R /usr/local/bin/wol $MOUNTPOINT/usr/bin/.
 fi
 cp -R /usr/bin/zcat $MOUNTPOINT/usr/bin/.    
+
+cp -R /sbin/disklabel $MOUNTPOINT/usr/sbin/.
 
 echo "Installing additional files."
 
