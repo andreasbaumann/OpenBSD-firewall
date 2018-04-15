@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2017121000	; serial
+				2017121600	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
