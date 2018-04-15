@@ -50,6 +50,9 @@ dd if=[machine].img | ssh [machine] "dd of=/dev/wd1c"
 
 ## News
 
+15.04.2018:
+- updated to OpenBSD 6.3
+
 19.10.2017:
 - updated to OpenBSD 6.2
 
