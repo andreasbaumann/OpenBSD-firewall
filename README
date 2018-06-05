@@ -1,8 +1,3 @@
-+++
-title = "OpenBSD-Firewall"
-description = "OpenBSD firewall via scripts"
-+++
-
 ## History
 
 Earlier versions of this project were used at Eurospider by Mihai Barbos (https://github.com/mbarbos) 
