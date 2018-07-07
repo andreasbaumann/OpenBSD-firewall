@@ -1,0 +1,21 @@
+; internal view of zone pgfuse.org
+
+$TTL 60
+
+@		IN	SOA	ns.pgfuse.org. admin.pgfuse.org. (
+				2018060800	; serial
+				3h		; refresh
+				15m		; retry
+				2w		; expire
+				60		; minimum TTL
+			)
+
+	IN	NS		ns.pgfuse.org.
+
+$ORIGIN pgfuse.org.
+
+	IN		A	192.168.1.15
+
+ns			A	192.168.1.1
+
+www			A	192.168.1.15

@@ -1,0 +1,21 @@
+; internal view of zone openbsd-firewall.org
+
+$TTL 60
+
+@		IN	SOA	ns.openbsd-firewall.org. admin.openbsd-firewall.org. (
+				2018060900	; serial
+				3h		; refresh
+				15m		; retry
+				2w		; expire
+				60		; minimum TTL
+			)
+
+	IN	NS		ns.openbsd-firewall.org.
+
+$ORIGIN openbsd-firewall.org.
+
+	IN		A	192.168.1.15
+
+ns			A	192.168.1.1
+
+www			A	192.168.1.15
