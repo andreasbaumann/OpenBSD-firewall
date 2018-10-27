@@ -46,11 +46,13 @@ or remotely (after booting from floppy dongle or from hard disk):
 
 ## News
 
+04.09.2018:
+
+    Updated Soekris-firewall at Eurospider to 6.3.
+
 06.05.2018:
 
-    The firewall at Eurospider has not been updated in years and I'm fed up with
-    Github and the world in general, so I moved the repo and abandoned the old
-    development area on Github.
+    Moved repository from Github to a local repository.
 
 15.04.2018:
 
