@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2017121600	; serial
+				2018102800	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -25,7 +25,6 @@ smtp		IN	A		83.150.2.48
 
 www		IN	A		83.150.2.48
 cloud		IN	A		83.150.2.48
-blog		IN	A		83.150.2.48
 ftp		IN	A		83.150.2.48
 imap		IN	A		83.150.2.48
 pop		IN	A		83.150.2.48
