@@ -21,8 +21,8 @@ sync the template directory with the files found in the vanilla OpenBSD:
   template/etc/boot.conf
   template/etc/resolv.conf
   template/etc/syslog.conf
-  template/etc/fstab
   template/etc/newsyslog.conf
+  template/etc/fstab
   template/etc/tabs/root
   template/etc/passwd
     cp /etc/passwd template/etc/passwd
@@ -34,7 +34,7 @@ sync the template directory with the files found in the vanilla OpenBSD:
     
 sync config directories
 
-  cp /etc/network config/firewall-test/network
+  cp /etc/networks config/firewall-test/networks
   for other configs sync it and keep your local networks there
   cp /etc/network confug/xxx/network
   adapt and add your local network(s) at the end

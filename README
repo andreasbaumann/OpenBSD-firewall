@@ -44,13 +44,13 @@ or remotely (after booting from floppy dongle or from hard disk):
 
 ## News
 
-04.09.2018:
+28.10.2018:
 
-    Updated Soekris-firewall at Eurospider to 6.3.
+    updated to OpenBSD 6.4
 
 06.05.2018:
 
-    Moved repository from Github to a local repository.
+    moved repository from Github to a local repository.
 
 15.04.2018:
 
@@ -122,10 +122,10 @@ At Eurospider we had Portwell NAR-2054 (3 and 5 ethernet port versions),
 some have VGA ports and USBs, others only COMs, so make sure we always 
 get boot output on COM.
 
-Now at Eurospider we run it on a Soekris net6501, but I'm not going to
-update and test that one anymore.
+Now at Eurospider we run it on a Soekris net6501.
 
 At home I'm running it on an ALIX.2D13 with 3 LAN ports and a WLAN card.
+
 VirtualBox build and test
 
 Create a VMDK wrapper for the disk image built with 'build.sh firewall-test':

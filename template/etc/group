@@ -58,7 +58,6 @@ _ripd:*:88:
 _relayd:*:89:
 _ospf6d:*:90:
 _snmpd:*:91:
-_rtadvd:*:92:
 _ypldap:*:93:
 _smtpd:*:95:
 _rwalld:*:96:
@@ -84,3 +83,5 @@ nobody:*:32767:
 _rsync:*:669:
 _gitdaemon:*:778:
 _dbus:*:572:
+_rad:*:94:
+_avahi:*:629:
