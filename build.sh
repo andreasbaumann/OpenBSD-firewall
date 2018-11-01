@@ -313,6 +313,8 @@ fi
 
 # synchronizing time is always a good idea
 if test -f config/$HOSTNAME/ntpd.conf; then
+	mkdir $MOUNTPOINT/etc/ssl
+	cp -R /etc/ssl/cert.pem $MOUNTPOINT/etc/ssl/.
 	cp -R config/$HOSTNAME/ntpd.conf $MOUNTPOINT/etc/.
 	cp -R /usr/sbin/ntpctl $MOUNTPOINT/usr/sbin/.
 	cp -R /usr/sbin/ntpd $MOUNTPOINT/usr/sbin/.
