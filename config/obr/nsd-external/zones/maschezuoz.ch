@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.maschezuoz.ch. admin.maschezuoz.ch. (
-				2017050500	; serial
+				2019032601	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -14,12 +14,14 @@ $TTL 60
 	IN	NS		f.ns.buddyns.com.
 	IN	NS		h.ns.buddyns.com.
 	IN	MX	10	smtp.maschezuoz.ch.
+maschezuoz.ch.	IN      A	83.150.2.48
 	IN	TXT		"v=spf1 mx ip4:83.150.2.48/24 ~all"
-
+mail._domainkey IN      TXT     ( "v=DKIM1; k=rsa; s=email; "
+          "p=MIIBHTANBgkqhkiG9w0BAQEFAAOCAQoAMIIBBQKB/QL7dTJ8ID7j7EJapWXb1pPJNYIJVi7ZjGYUBvHt7Z3gZiYYMZzNld1lcyzlxVSWYsxdXgeDLc/o9Evfn7nXilneiT+c7gvipAVE9bMXmFMPkUuCbOXCRwAevRXZ13UFRcT7UQGnfdZA9kjiQjqKHCcmbMl+5MgYyVTX1xUMaKQwxGTbGhevwgm0YBBa7pWXPGaV0+4v0uCxjDaEAV"
+          "q4zSuRrK/AqNoL/NweuWgCPkYVj5lyYB/Gi2tOM7Gkc1CHCNqFc7rWBr3g8uiYkuijPMfj+R4yXVy655YPwNAxOpoggW9D30NC4Mj2gm+LXpkL5K7OTVcMhAevwx84QJMCAwEAAQ==" )
+_dmarc  IN	TXT		"v=DMARC1; p=none; adkim=s; aspf=r; fo=1; rua=mailto:postmaster@maschezuoz.ch; ruf=mailto:postmaster@maschezuoz.ch"
 
 $ORIGIN maschezuoz.ch.
-
-	IN	A		83.150.2.48
 
 ns	IN	A		83.150.2.48
 
