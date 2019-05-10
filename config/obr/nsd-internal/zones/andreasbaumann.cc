@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. root.andreasbaumann.cc. (
-				2018111700	; serial
+				2019041800	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -29,10 +29,10 @@ webmail			A	192.168.1.15
 www			A	192.168.1.15
 git			A	192.168.1.15
 devel			A	192.168.1.12
-mon			A	192.168.1.16
 archlinux32		A	192.168.1.15
 ;archlinux32		A	192.168.1.22
 eurocloud		A	5.102.146.92
+mon			A	192.168.1.33
 
 ; hosted at godaddy
 backup			A	192.186.235.194 
