@@ -36,7 +36,7 @@ sync config directories
 
   cp /etc/networks config/firewall-test/networks
   for other configs sync it and keep your local networks there
-  cp /etc/network confug/xxx/network
+  cp /etc/network config/xxx/network
   adapt and add your local network(s) at the end
   /etc/joe copy and adapt, keep it as minimal as you like
   
