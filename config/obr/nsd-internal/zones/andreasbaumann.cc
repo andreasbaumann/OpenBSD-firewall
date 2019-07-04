@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. root.andreasbaumann.cc. (
-				2019041800	; serial
+				2019061902	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
