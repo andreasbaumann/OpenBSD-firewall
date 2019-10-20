@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2019041501	; serial
+				2019071800	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -35,10 +35,8 @@ pop		IN	A		83.150.2.48
 smtp		IN	A		83.150.2.48
 webmail		IN	A		83.150.2.48
 git		IN	A		83.150.2.48
-devel		IN	A		83.150.2.48
 mon		IN	A		83.150.2.48
 archlinux32	IN	A		83.150.2.48
-eurocloud	IN	A		5.102.146.92
 
 ; this is hosted at GoDaddy
 backup		IN	A		192.186.235.194
