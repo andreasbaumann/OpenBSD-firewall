@@ -9,7 +9,7 @@ I merely collected the ideas and updated them to new versions of OpenBSD and cle
 
 And I'm using it at home.
 
-## Github
+## Git
 
 Further development happens on git://git.andreasbaumann.cc/OpenBSD-firewall.git
 or http://git.andreasbaumann.cc/cgit/OpenBSD-firewall/.
