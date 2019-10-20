@@ -291,6 +291,7 @@ echo "Installing non-optional specific configuration for $HOSTNAME."
 cp -R config/$HOSTNAME/hosts $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/networks $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/pf.conf $MOUNTPOINT/etc/.
+cp -R config/$HOSTNAME/badhosts $MOUNTPOINT/etc/.
 m4 -DHOSTNAME=$HOSTNAME template/etc/rc >  $MOUNTPOINT/etc/rc
 
 # depending on the existence of some config files for the specific build
