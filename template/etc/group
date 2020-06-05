@@ -86,3 +86,5 @@ _dbus:*:572:
 _rad:*:94:
 _avahi:*:629:
 _unwind:*:48:
+_rpki-client:*:70:
+_cups:*:541:

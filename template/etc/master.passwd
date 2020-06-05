@@ -67,3 +67,5 @@ _dbus:*:572:572:daemon:0:0:dbus user:/nonexistent:/sbin/nologin
 _rad:*:94:94::0:0:IPv6 Router Advertisement Daemon:/var/empty:/sbin/nologin
 _avahi:*:629:629:daemon:0:0:Avahi User:/var/empty:/sbin/nologin
 _unwind:*:48:48::0:0:Unwind Daemon:/var/empty:/sbin/nologin
+_rpki-client:*:70:70::0:0:rpki-client user:/nonexistent:/sbin/nologin
+_cups:*:541:541:daemon:0:0:CUPS printer spooler daemon:/nonexistent:/sbin/nologin

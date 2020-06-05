@@ -737,12 +737,12 @@ extmouse	^[ [ <		Introduces an extended xterm mouse event
 :def aspellword psh,nextword,markk,prevword,markb,filt,"SPLTMP=ispell.tmp;cat >$SPLTMP;aspell --lang=",language,".",charset," -x -c $SPLTMP </dev/tty >/dev/tty;tr -d <$SPLTMP '\\012';/bin/rm $SPLTMP",rtn,retype,nextword
 
 
-ispellfile	^Q l
-ispellfile	^Q L
-ispellfile	^Q ^L
-ispellword	^Q n
-ispellword	^Q N
-ispellword	^Q ^N
+aspellfile	^Q l
+aspellfile	^Q L
+aspellfile	^Q ^L
+aspellword	^Q n
+aspellword	^Q N
+aspellword	^Q ^N
 
  Compile macro
 
