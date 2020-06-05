@@ -189,14 +189,13 @@ cp -R /usr/sbin/cron $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/config $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/dev_mkdb $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/dhcrelay $MOUNTPOINT/usr/sbin/.
-cp -R /usr/sbin/dig $MOUNTPOINT/usr/sbin/.
+cp -R /usr/bin/dig $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/ftp-proxy $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/ospfctl $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/ospfd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/pwd_mkdb $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/rdate $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/sensorsd $MOUNTPOINT/usr/sbin/.
-cp -R /usr/sbin/snmpctl $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/snmpd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/sshd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/syslogc $MOUNTPOINT/usr/sbin/.
