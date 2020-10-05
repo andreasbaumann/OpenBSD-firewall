@@ -24,7 +24,7 @@ mount_mfs -s 1024 -i 1024 swap /dev
 
 echo mfs: populating /dev...
 mv /tmp/MAKEDEV /dev/.
-( cd /dev && /dev/MAKEDEV std wd0 random pf bpf ttyC0 tty00 ptm pty )
+( cd /dev && /dev/MAKEDEV std wd0 sd0 random pf bpf ttyC0 tty00 ptm pty )
 
 echo mfs: populating /tmp...
 mkdir /tmp/var
@@ -80,7 +80,7 @@ echo pf: enabling firewall...
 pfctl -e -f /etc/pf.conf
 
 echo ntpd: starting network time daemon...
-/usr/sbin/ntpd -s
+/usr/sbin/ntpd
 
 echo syslogd: starting log daemon...
 syslogd -p /dev/log
