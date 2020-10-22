@@ -3,11 +3,13 @@
 Earlier versions of this project were used at Eurospider by Mihai Barbos (https://github.com/mbarbos) 
 to build corporate-style firewalls with Portwell hardware.
 
-Newer versions run on Soekris hardware now.
+It ran on a Soekris net6501 for 4 years.
+
+Newer versions run on a Network LES of Thomas Krenn now.
 
 I merely collected the ideas and updated them to new versions of OpenBSD and cleaned up the repository a little bit. :-)
 
-And I'm using it at home.
+And I'm using it at home on an Alix 2D.13.
 
 ## Git
 
@@ -43,6 +45,10 @@ or remotely (after booting from floppy dongle or from hard disk):
 - hardware: flash disk geometry for specific machines
 
 ## News
+
+22.10.2020:
+
+    updated to OpenBSD 6.8
 
 5.6.2020:
 

@@ -88,3 +88,4 @@ _avahi:*:629:
 _unwind:*:48:
 _rpki-client:*:70:
 _cups:*:541:
+_svnserve:*:777:
