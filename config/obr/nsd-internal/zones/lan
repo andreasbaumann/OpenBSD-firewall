@@ -5,7 +5,7 @@ $ORIGIN .
 $TTL 60
 
 lan	IN		SOA	obr.lan. root.obr.lan. (
-				2020080600	; serial
+				2020101200	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
