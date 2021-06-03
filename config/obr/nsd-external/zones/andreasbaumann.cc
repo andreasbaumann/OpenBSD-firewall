@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2020020101	; serial
+				2021041500	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -37,6 +37,4 @@ webmail		IN	A		83.150.2.48
 git		IN	A		83.150.2.48
 mon		IN	A		83.150.2.48
 archlinux32	IN	A		83.150.2.48
-
-; this is hosted at GoDaddy
-backup		IN	A		192.186.235.194
+libraries	IN	A		83.150.2.48

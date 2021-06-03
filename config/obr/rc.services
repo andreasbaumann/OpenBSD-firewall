@@ -17,8 +17,8 @@ chown _dhcp:_dhcp /var/db/dhcpd.leases
 /usr/sbin/dhcpd -c /etc/dhcpd.conf vr2 
 
 echo ftp-proxy: starting FTP proxy...
-/usr/sbin/ftp-proxy -R 192.168.1.9 -p 8021
-/usr/sbin/ftp-proxy -R 192.168.1.12 -p 8022
+/usr/sbin/ftp-proxy -R 192.168.1.9 -r -p 8021
+/usr/sbin/ftp-proxy -R 192.168.1.12 -r -p 8022
 
 echo relayd: starting reverse proxy...
 /usr/sbin/relayd
