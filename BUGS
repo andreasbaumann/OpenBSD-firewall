@@ -3,3 +3,7 @@
   SSHD, ipsec
 - disklabel: the offset is not correctly set (1 cylinder left for MBR and
   boot code in fdisk, but not in disklabel).
+- newsyslog doesn't run periotically in cron
+- sshd dies periodically with: /bsd: UVM: pid 31814 (sshd), uid 0 killed: out of swap
+  (we cannot have swap as we are on a compact flash and read-write filesystem)
+
