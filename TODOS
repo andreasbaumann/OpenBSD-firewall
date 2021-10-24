@@ -13,3 +13,7 @@
 - /etc/moduli: should it be generated for every new installation?
 - dead relayd, no clue why
 - dead sshd: UVM: pid PPPP (login_passwd), uid 0 killed: out of swap
+  https://www.mail-archive.com/arm@openbsd.org/msg02168.html
+  https://www.mail-archive.com/arm@openbsd.org/msg02144.html
+  https://www.mail-archive.com/arm@openbsd.org/msg02145.html
+  or we simply don't have enough RAM on the Alix to run it?
