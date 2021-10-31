@@ -192,4 +192,5 @@ then change the access mode from DMA to PIO x See man wd(4) for the values of fl
 
 ## Other projects
 
-http://securityrouter.org, OpenBSD-based, free and commercial versions available, has a GUI
+- http://securityrouter.org, OpenBSD-based, free and commercial versions available, has a GUI
+- https://github.com/sonertari/PFFW: nice GUIs, privilege separation
