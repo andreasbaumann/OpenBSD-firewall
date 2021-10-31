@@ -47,6 +47,7 @@ chown root:wheel /tmp/var/cron/log
 chmod 0600 /tmp/var/cron/log
 mkdir /tmp/var/cron/atjobs
 cp -R /etc/tabs /tmp/var/cron/tabs
+chown -R :crontab /tmp/var/cron/tabs/*
 mkdir /tmp/var/tmp/vi.recover
 mkdir /tmp/var/etc
 
