@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2021041500	; serial
+				2021111001	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -21,11 +21,11 @@ mail._domainkey	IN	TXT		( "v=DKIM1; k=rsa; s=email; "
 					"Z4vIq/yHM8/az5peVoaaFA1A+RVMLvy+o1XbhMBsM7nOnDPcQxPyxBcDmedgbni6F3I8Vl2hYDvcjza5eJ8fJVxjLBVWMYAhRowWzl0TU9nyeHBbncCYW9QiNBicHQy88CAwEAAQ==" )
 _dmarc		IN	TXT		"v=DMARC1; p=none; adkim=s; aspf=r; fo=1; rua=mailto:postmaster@andreasbaumann.cc; ruf=mailto:postmaster@andreasbaumann.cc"
 
-
 $ORIGIN andreasbaumann.cc.
 
 ns		IN	A		83.150.2.48
 smtp		IN	A		83.150.2.48
+
 
 www		IN	A		83.150.2.48
 cloud		IN	A		83.150.2.48
