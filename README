@@ -46,11 +46,15 @@ or remotely (after booting from floppy dongle or from hard disk):
 
 ## News
 
+1.5.2022:
+
+    updated to OpenBSD 7.1
+
 24.10.2021:
 
     updated to OpenBSD 7.0
 
-03.06.2021:
+3.6.2021:
 
     updated to OpenBSD 6.9
 
@@ -148,11 +152,13 @@ At Eurospider we had Portwell NAR-2054 (3 and 5 ethernet port versions),
 some have VGA ports and USBs, others only COMs, so make sure we always 
 get boot output on COM.
 
-Now at Eurospider we run it on a Soekris net6501.
+It ran on a Soekris net6501 for 4 years.
+
+Newer versions run on a Network LES of Thomas Krenn now.
 
 At home I'm running it on an ALIX.2D13 with 3 LAN ports and a WLAN card.
 
-VirtualBox build and test
+## VirtualBox build and test
 
 Create a VMDK wrapper for the disk image built with 'build.sh firewall-test':
 
