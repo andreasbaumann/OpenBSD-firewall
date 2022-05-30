@@ -2,6 +2,9 @@
 
 DEVICE=vnd0
 MOUNTPOINT=/mnt/fw
+# depends on the hardware sdX for SCSI and wd0 for flashes/IDE/PATA
+# (also adapt in template/etc/fstab for instance)
+ROOT=sd0
 
 if test X$1 = X"-h"; then
 	print "Usage: build.sh [ <machine> [ <flash layout> ] ]"
@@ -117,7 +120,7 @@ chmod +t $MOUNTPOINT/tmp
 echo "Populating /dev filesystem with minimal set up startup devices."
 
 cp -R /dev/MAKEDEV $MOUNTPOINT/dev/.
-( cd $MOUNTPOINT/dev && ./MAKEDEV std wd0 random pf bpf ttyC0 tty00 )
+( cd $MOUNTPOINT/dev && ./MAKEDEV std $ROOT random pf bpf ttyC0 tty00 )
 
 echo "Installing userland."
 
