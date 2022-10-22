@@ -1,5 +1,8 @@
 echo ifnet: bringing up interfaces
 
+# dhclient requires dhcpleased since OpenBSD 7.2
+/sbin/dhcpleased
+
 # vr0: uplink, iWay requires us to use DHCP though we have a static IP
 
 dhclient vr0

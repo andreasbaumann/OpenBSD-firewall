@@ -1,5 +1,8 @@
 echo ifnet: bringing up interfaces
 
+# dhclient requires dhcpleased since OpenBSD 7.2
+/sbin/dhcpleased
+
 # in VirtualBox
 dhclient em0
 

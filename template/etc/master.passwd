@@ -70,3 +70,5 @@ _unwind:*:48:48::0:0:Unwind Daemon:/var/empty:/sbin/nologin
 _rpki-client:*:70:70::0:0:rpki-client user:/nonexistent:/sbin/nologin
 _cups:*:541:541:daemon:0:0:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
 _svnserve:*:777:777:daemon:0:0:SVN Daemon:/nonexistent:/sbin/nologin
+_bgplgd:*:71:71::0:0:bgplgd Daemon:/nonexistent:/sbin/nologin
+_geoclue:*:731:731::0:0:GeoClue service user:/nonexistent:/sbin/nologin

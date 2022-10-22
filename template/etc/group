@@ -89,3 +89,6 @@ _unwind:*:48:
 _rpki-client:*:70:
 _cups:*:541:
 _svnserve:*:777:
+_bgplgd:*:71:
+_agentx:*:92:
+_geoclue:*:731:
