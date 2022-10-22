@@ -50,7 +50,7 @@ echo "Using image $IMAGE_FILE as virtual device $DEVICE with $nof_sectors a $BYT
 
 dd if=/dev/zero of=$IMAGE_FILE bs=$BYTES_PER_SECTOR count=$nof_sectors
 
-vnconfig -c $DEVICE $IMAGE_FILE
+vnconfig $DEVICE $IMAGE_FILE
 vnconfig -l
 
 echo "Installing MBR and creating PC partition table."
@@ -153,7 +153,6 @@ cp -R /bin/tar $MOUNTPOINT/bin/.
 cp -R /bin/test $MOUNTPOINT/bin/.
 
 cp -R /sbin/chown $MOUNTPOINT/sbin/.
-cp -R /sbin/dhclient $MOUNTPOINT/sbin/.
 cp -R /sbin/dmesg $MOUNTPOINT/sbin/.
 cp -R /sbin/fsck $MOUNTPOINT/sbin/.
 cp -R /sbin/fsck_ffs $MOUNTPOINT/sbin/.
@@ -302,9 +301,15 @@ m4 -DHOSTNAME=$HOSTNAME template/etc/rc >  $MOUNTPOINT/etc/rc
 
 echo "Installing optional specific configuration for $HOSTNAME."
 
+# when running a DHCP client for an uplink
 if test -f config/$HOSTNAME/dhclient.conf; then
 	cp -R config/$HOSTNAME/dhclient.conf $MOUNTPOINT/etc/.
 	cp -R /sbin/dhclient $MOUNTPOINT/sbin/.
+fi
+if test -f config/$HOSTNAME/dhcpleased.conf; then
+	cp -R config/$HOSTNAME/dhcpleased.conf $MOUNTPOINT/etc/.
+	cp -R /sbin/dhcpleased $MOUNTPOINT/sbin/.
+	cp -R /usr/sbin/dhcpleasectl $MOUNTPOINT/sbin/.
 fi
 
 # when running a DHCP server for the local network
