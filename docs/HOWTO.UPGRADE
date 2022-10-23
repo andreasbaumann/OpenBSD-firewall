@@ -14,6 +14,7 @@ sync the template directory with the files found in the vanilla OpenBSD:
   cp /etc/gettytab template/etc/gettytab
   cp /etc/master.passwd template/etc/master.passwd
   cp /etc/ssh/sshd_config template/etc/ssh/sshd_config
+  cp /etc/termcap template/etc/termcap
   
   the following files are customized, so adapt the by hand if concepts
   change upstream

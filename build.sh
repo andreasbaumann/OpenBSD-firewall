@@ -275,6 +275,7 @@ cp -R template/etc/group $MOUNTPOINT/etc/.
 cp -R template/etc/master.passwd $MOUNTPOINT/etc/.
 cp -R template/etc/gettytab $MOUNTPOINT/etc/.
 cp -R template/etc/ttys $MOUNTPOINT/etc/.
+cp -R template/etc/termcap $MOUNTPOINT/etc/.
 cp -R template/etc/pf.os $MOUNTPOINT/etc/.
 cp -R template/etc/syslog.conf $MOUNTPOINT/etc/.
 cp -R template/etc/resolv.conf $MOUNTPOINT/etc/.
