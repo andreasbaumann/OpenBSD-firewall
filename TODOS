@@ -1,3 +1,4 @@
+- VPN with wireguard
 - strip from debugging symbols binaries and libraries
 - install a customized/optimized kernel (currently we take the one
   from the master/builder)
