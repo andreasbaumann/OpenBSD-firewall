@@ -1,4 +1,4 @@
-# 1 GB flash (second newer one)
+# 1 GB flash (third newer one)
 BYTES_PER_SECTOR=512
 SECTORS_PER_TRACK=32
 TRACKS_PER_CYLINDER=64

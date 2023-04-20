@@ -35,7 +35,7 @@ echo "Using the following disk geometry:"
 echo "Bytes/sector: $BYTES_PER_SECTOR"
 echo "Sectors/track: $SECTORS_PER_TRACK"
 echo "Tracks/cylinder: $TRACKS_PER_CYLINDER"
-echo "Sectors/cylinder: $SECTORES_PER_CYLINDER"
+echo "Sectors/cylinder: $SECTORS_PER_CYLINDER"
 echo "Cylinders: $CYLINDERS"
 echo "Offset: $OFFSET"
 echo "Number of sectors: $nof_sectors"
@@ -75,7 +75,7 @@ label: root
 bytes/sector: $BYTES_PER_SECTOR
 sectors/track: $SECTORS_PER_TRACK
 tracks/cylinder: $TRACKS_PER_CYLINDER
-sectors/cylinder: $SECTORES_PER_CYLINDER
+sectors/cylinder: $SECTORS_PER_CYLINDER
 cylinders: $CYLINDERS
 total sectors: $nof_sectors
 
