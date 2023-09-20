@@ -5,3 +5,5 @@
   boot code in fdisk, but not in disklabel).
 - joe: output completely unusable over serial
 - FTP relaying not working
+- resolv.conf is in template and has a hard-coded nameserver 192.168.1.1,
+  should really be in config/<host>
