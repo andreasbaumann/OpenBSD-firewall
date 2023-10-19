@@ -278,7 +278,6 @@ cp -R template/etc/ttys $MOUNTPOINT/etc/.
 cp -R template/etc/termcap $MOUNTPOINT/etc/.
 cp -R template/etc/pf.os $MOUNTPOINT/etc/.
 cp -R template/etc/syslog.conf $MOUNTPOINT/etc/.
-cp -R template/etc/resolv.conf $MOUNTPOINT/etc/.
 cp -R template/etc/tabs $MOUNTPOINT/etc/.
 chmod 0600 $MOUNTPOINT/etc/tabs/*
 cp -R template/etc/newsyslog.conf $MOUNTPOINT/etc/.
@@ -294,6 +293,7 @@ cp -R config/$HOSTNAME/hosts $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/networks $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/pf.conf $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/badhosts $MOUNTPOINT/etc/.
+cp -R config/$HOSTNAME/resolv.conf $MOUNTPOINT/etc/.
 m4 -DHOSTNAME=$HOSTNAME template/etc/rc >  $MOUNTPOINT/etc/rc
 
 # depending on the existence of some config files for the specific build

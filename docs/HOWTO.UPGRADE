@@ -20,7 +20,6 @@ sync the template directory with the files found in the vanilla OpenBSD:
   change upstream
   
   template/etc/boot.conf
-  template/etc/resolv.conf
   template/etc/syslog.conf
   template/etc/newsyslog.conf
   template/etc/fstab
@@ -35,16 +34,17 @@ sync the template directory with the files found in the vanilla OpenBSD:
     
 sync config directories
 
-  cp /etc/networks config/firewall-test/networks
+  cp /etc/networks config/xxx/networks
   for other configs sync it and keep your local networks there
   /etc/joe copy and adapt, keep it as minimal as you like
   
-those configs are really yours
+those configs are really yours, sync them also with new concepts from upstream
 
   config/xxx/dhclient.conf
   config/xxx/rc.services  
   config/xxx/nsd-xxx
   config/xxx/relayd.conf
+  config/xxx/resolv.conf
  
 build the image
 
