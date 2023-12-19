@@ -5,6 +5,3 @@ echo ifnet: bringing up interfaces
 
 # in VirtualBox
 dhclient em0
-
-# with real box (realtek)
-#dhclient re0
