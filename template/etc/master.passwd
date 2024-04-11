@@ -1,4 +1,4 @@
-root:$2b$08$KlFKHMwT2YfgiUzPA4azPeiFryqUSuyUcQYSfA7ABovo75qlQW6Cy:0:0:daemon:0:0:Charlie &:/root:/bin/ksh
+root:$2b$08$sEK4JYh3din.i.RvDmd9oeTFxqVLKOI4rtp89Qsj53XSz7w8HHByy:0:0:daemon:0:0:Charlie &:/root:/bin/ksh
 daemon:*:1:1::0:0:The devil himself:/root:/sbin/nologin
 operator:*:2:5::0:0:System &:/operator:/sbin/nologin
 bin:*:3:7::0:0:Binaries Commands and Source:/:/sbin/nologin
@@ -10,10 +10,9 @@ _rstatd:*:30:30::0:0:rpc.rstatd:/var/empty:/sbin/nologin
 _rusersd:*:32:32::0:0:rpc.rusersd:/var/empty:/sbin/nologin
 _fingerd:*:33:33::0:0:fingerd:/var/empty:/sbin/nologin
 _x11:*:35:35::0:0:X Server:/var/empty:/sbin/nologin
-_switchd:*:49:49::0:0:Switch Daemon:/var/empty:/sbin/nologin
+_unwind:*:48:48::0:0:Unwind Daemon:/var/empty:/sbin/nologin
 _traceroute:*:50:50::0:0:traceroute privdrop user:/var/empty:/sbin/nologin
 _ping:*:51:51::0:0:ping privdrop user:/var/empty:/sbin/nologin
-_rebound:*:52:52::0:0:Rebound DNS Daemon:/var/empty:/sbin/nologin
 _unbound:*:53:53:unbound:0:0:Unbound Daemon:/var/unbound:/sbin/nologin
 _dpb:*:54:54::0:0:dpb privsep:/var/empty:/sbin/nologin
 _pbuild:*:55:55:pbuild:0:0:dpb build user:/nonexistent:/sbin/nologin
@@ -23,6 +22,8 @@ _pkguntar:*:58:58::0:0:pkg untar user:/nonexistent:/sbin/nologin
 _spamd:*:62:62::0:0:Spam Daemon:/var/empty:/sbin/nologin
 www:*:67:67::0:0:HTTP Server:/var/www:/sbin/nologin
 _isakmpd:*:68:68::0:0:isakmpd privsep:/var/empty:/sbin/nologin
+_rpki-client:*:70:70::0:0:rpki-client user:/nonexistent:/sbin/nologin
+_bgplgd:*:71:71::0:0:bgplgd Daemon:/nonexistent:/sbin/nologin
 _syslogd:*:73:73::0:0:Syslog Daemon:/var/empty:/sbin/nologin
 _pflogd:*:74:74::0:0:pflogd privsep:/var/empty:/sbin/nologin
 _bgpd:*:75:75::0:0:BGP Daemon:/var/empty:/sbin/nologin
@@ -42,6 +43,7 @@ _relayd:*:89:89::0:0:Relay Daemon:/var/empty:/sbin/nologin
 _ospf6d:*:90:90::0:0:OSPF6 Daemon:/var/empty:/sbin/nologin
 _snmpd:*:91:91::0:0:SNMP Daemon:/var/empty:/sbin/nologin
 _ypldap:*:93:93::0:0:YP to LDAP Daemon:/var/empty:/sbin/nologin
+_rad:*:94:94::0:0:IPv6 Router Advertisement Daemon:/var/empty:/sbin/nologin
 _smtpd:*:95:95::0:0:SMTP Daemon:/var/empty:/sbin/nologin
 _rwalld:*:96:96::0:0:rpc.rwalld:/var/empty:/sbin/nologin
 _nsd:*:97:97::0:0:NSD Daemon:/var/empty:/sbin/nologin
@@ -61,14 +63,5 @@ _sndiop:*:110:110::0:0:sndio privileged user:/var/empty:/sbin/nologin
 _syspatch:*:112:112::0:0:syspatch unprivileged user:/var/empty:/sbin/nologin
 _slaacd:*:115:115::0:0:SLAAC Daemon:/var/empty:/sbin/nologin
 nobody:*:32767:32767::0:0:Unprivileged user:/nonexistent:/sbin/nologin
-_rsync:*:669:669:daemon:0:0:rsync Daemon:/var/empty:/sbin/nologin
-_gitdaemon:*:778:778:daemon:0:0:GIT Daemon:/nonexistent:/sbin/nologin
-_dbus:*:572:572:daemon:0:0:dbus user:/nonexistent:/sbin/nologin
-_rad:*:94:94::0:0:IPv6 Router Advertisement Daemon:/var/empty:/sbin/nologin
-_avahi:*:629:629:daemon:0:0:Avahi User:/var/empty:/sbin/nologin
-_unwind:*:48:48::0:0:Unwind Daemon:/var/empty:/sbin/nologin
-_rpki-client:*:70:70::0:0:rpki-client user:/nonexistent:/sbin/nologin
-_cups:*:541:541:daemon:0:0:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
-_svnserve:*:777:777:daemon:0:0:SVN Daemon:/nonexistent:/sbin/nologin
-_bgplgd:*:71:71::0:0:bgplgd Daemon:/nonexistent:/sbin/nologin
-_geoclue:*:731:731::0:0:GeoClue service user:/nonexistent:/sbin/nologin
+_gitdaemon:*:778:778::0:0:Git Daemon:/nonexistent:/sbin/nologin
+_dbus:*:572:572::0:0:dbus user:/nonexistent:/sbin/nologin

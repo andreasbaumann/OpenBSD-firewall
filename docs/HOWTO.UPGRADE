@@ -59,6 +59,3 @@ mount it and test it in the chroot
 you cannot test the router and the config itself, but at least
 you can test in the chroot whether all binaries have their corresponding
 shared libraries and do actually start.
-
-  
-  
