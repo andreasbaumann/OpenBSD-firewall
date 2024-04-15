@@ -5,7 +5,7 @@ $ORIGIN .
 $TTL 60
 
 lan	IN		SOA	obr.lan. root.obr.lan. (
-				2024012500	; serial
+				2024041500	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -55,5 +55,6 @@ eurobuild12		A		192.168.1.41
 eurobuild13		A		192.168.1.42
 eurobuild14		A		192.168.1.43
 euronuc			A		192.168.1.44
+euronuc-i486		A		192.168.1.45
 wrt1			A		192.168.1.254
 iway-gateway		A		83.150.2.1
