@@ -1,0 +1,21 @@
+; internal view of zone patrick-frey.org
+
+$TTL 60
+
+@		IN	SOA	ns.patrick-frey.org. admin.patrick-frey.org. (
+				2024042101	; serial
+				3h		; refresh
+				15m		; retry
+				2w		; expire
+				60		; minimum TTL
+			)
+
+	IN	NS		ns.patrick-frey.org.
+
+$ORIGIN patrick-frey.org.
+
+	IN		A	192.168.1.15
+
+ns			A	192.168.1.1
+
+www			A	192.168.1.15
