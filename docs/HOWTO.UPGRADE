@@ -21,7 +21,6 @@ sync the template directory with the files found in the vanilla OpenBSD:
   
   template/etc/boot.conf
   template/etc/syslog.conf
-  template/etc/newsyslog.conf
   template/etc/fstab
   template/etc/tabs/root
   template/etc/passwd
@@ -45,6 +44,7 @@ those configs are really yours, sync them also with new concepts from upstream
   config/xxx/nsd-xxx
   config/xxx/relayd.conf
   config/xxx/resolv.conf
+  config/xxx/newsyslog.conf
  
 build the image
 
