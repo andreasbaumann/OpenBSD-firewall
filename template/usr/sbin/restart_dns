@@ -23,7 +23,7 @@ echo "nsd: restarting ..."
 echo "unbound: redeploy from persistent /etc/unbound to /var/unboud ..."
 rm -rf /tmp/var/unbound
 cp -R /etc/unbound /tmp/var/unbound
-chown -R _unbound:_unbound /tmp/var/unbound/db
+chown -R _unbound:_unbound /tmp/var/unbound
 
 echo "unbound: restarting ..."
 /usr/sbin/unbound
