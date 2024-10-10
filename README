@@ -144,6 +144,7 @@ Possible small OpenBSD makers (low level):
   - http://www.nmedia.net/flashrd/rlsnotes.html
   - https://github.com/yellowman/flashrd/
   - http://www.nmedia.net/~chris/soekris/: original page which has gone, flashdist is the older version of flashrd. The EIT firewalls where based on early scripts of Chris Cappuccio (early flashdist)
+  - https://www.nmedia.net/flashdist/
 - Bowlfish:
   - http://www.kernel-panic.it/software/bowlfish/: latest version 2.1 seems a little bit old (11.4.2013). The description about Embedded OpenBSD is very worthy to read, gives quite some insights how it works.
     sort of a normal BSD install, not really automatic
