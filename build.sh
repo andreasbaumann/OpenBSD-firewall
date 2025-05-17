@@ -201,6 +201,7 @@ cp -R /usr/sbin/sensorsd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/snmpd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/sshd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/libexec/sshd-session $MOUNTPOINT/usr/libexec/.
+cp -R /usr/libexec/sshd-auth $MOUNTPOINT/usr/libexec/.
 cp -R /usr/sbin/syslogc $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/syslogd $MOUNTPOINT/usr/sbin/.
 cp -R /usr/sbin/tcpdump $MOUNTPOINT/usr/sbin/.
