@@ -16,8 +16,8 @@ sync the template directory with the files found in the vanilla OpenBSD:
   cp /etc/ssh/sshd_config template/etc/ssh/sshd_config
   cp /etc/termcap template/etc/termcap
   
-  the following files are customized, so adapt the by hand if concepts
-  change upstream
+  the following files are customized, so adapt them by hand if concepts
+  change upstream:
   
   template/etc/boot.conf
   template/etc/syslog.conf

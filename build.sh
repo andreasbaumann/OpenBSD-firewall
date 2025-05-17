@@ -295,7 +295,7 @@ cp -R config/$HOSTNAME/pf.conf $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/badhosts $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/resolv.conf $MOUNTPOINT/etc/.
 cp -R config/$HOSTNAME/newsyslog.conf $MOUNTPOINT/etc/.
-if test config/$HOSTNAME/boot.conf; then
+if test -f config/$HOSTNAME/boot.conf; then
 	cp -R config/$HOSTNAME/boot.conf $MOUNTPOINT/etc/.
 fi
 m4 -DHOSTNAME=$HOSTNAME template/etc/rc >  $MOUNTPOINT/etc/rc

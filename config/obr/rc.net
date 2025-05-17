@@ -7,6 +7,8 @@ echo ifnet: bringing up interfaces
 
 dhclient vr0
 
+sleep 120
+
 # vr1: bridge to vr2
 
 ifconfig vr1 up description "LAN bridge"
