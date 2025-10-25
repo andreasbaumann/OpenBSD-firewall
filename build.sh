@@ -365,7 +365,7 @@ fi
 if test -d config/$HOSTNAME/unbound/; then
 	cp -R config/$HOSTNAME/unbound $MOUNTPOINT/etc/.
 	wget ftp://FTP.INTERNIC.NET/domain/named.cache -O config/$HOSTNAME/unbound/etc/root.hints
-	/usr/sbin/unbound-anchor -a config/$HOSTNAME/unbound//etc/unbound/etc/root.key
+	/usr/sbin/unbound-anchor -a config/$HOSTNAME/unbound/etc/root.key
 	cp -R /usr/sbin/unbound $MOUNTPOINT/usr/sbin/.
 	cp -R /usr/sbin/unbound-{checkconf,control-setup,anchor,control,host} $MOUNTPOINT/usr/sbin/.
 	unbound-control-setup -d $MOUNTPOINT/etc/unbound/etc

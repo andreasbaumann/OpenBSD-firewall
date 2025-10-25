@@ -94,3 +94,5 @@ _agentx:*:92:
 _geoclue:*:731:
 _shutdown:*:118:
 _dhcp6leased:*:116:
+_fc-cache:*:36:
+_lldpd:*:119:

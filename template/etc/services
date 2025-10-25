@@ -1,4 +1,4 @@
-# $OpenBSD: services,v 1.107 2024/06/04 18:13:23 landry Exp $
+# $OpenBSD: services,v 1.110 2025/07/31 09:05:26 ajacoutot Exp $
 #
 # Network services, Internet style
 # https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt
@@ -190,6 +190,7 @@ pptp		1723/tcp			# Point-to-Point Tunneling Protocol
 pptp		1723/udp			# Point-to-Point Tunneling Protocol
 radius		1812/udp			# radius authentication
 radacct		1813/udp	radius-acct	# radius accounting
+mqtt		1883/tcp			# Message Queuing Telemetry Transport Protocol
 ssdp		1900/tcp			# SSDP
 ssdp		1900/udp			# SSDP
 nfsd		2049/udp	nfs		# NFS server
@@ -252,6 +253,7 @@ postgresql	5432/udp			# PostgreSQL
 matter		5540/tcp			# Matter IoT
 matter		5540/udp			# Matter IoT
 rfb		5900/tcp	vnc		# Remote Framebuffer
+dtspc		6112/tcp			# CDE Subprocess Control Service
 syslog-tls	6514/tcp			# syslog over TLS
 afs3-fileserver	7000/tcp			# AFS fileserver
 afs3-fileserver	7000/udp			# AFS fileserver
@@ -275,6 +277,7 @@ afs3-rmtsys	7009/tcp			# AFS remote cache manager service
 afs3-rmtsys	7009/udp			# AFS remote cache manager service
 puppet		8140/tcp			# Puppet master service
 matrix-fed	8448/tcp			# Matrix Federation Protocol
+secure-mqtt	8883/tcp			# Secure MQTT
 ub-dns-control	8953/tcp			# unbound dns nameserver control
 git		9418/tcp			# git pack transfer service
 git		9418/udp			# git pack transfer service
@@ -313,6 +316,7 @@ spamd		8025/tcp			# spamd(8)
 spamd-sync	8025/udp			# spamd(8) synchronisation
 spamd-cfg	8026/tcp			# spamd(8) configuration
 dhcpd-sync	8067/udp			# dhcpd(8) synchronisation
+jetdirect	9100/tcp			# raw printing
 hunt		26740/udp			# hunt(6)
 #
 # Appletalk

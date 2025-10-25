@@ -45,10 +45,18 @@ those configs are really yours, sync them also with new concepts from upstream
   config/xxx/relayd.conf
   config/xxx/resolv.conf
   config/xxx/newsyslog.conf
- 
+
+update the root.hints in config/xxx/unbound/etc (though it gets downloaded
+again for the build)
+
 build the image
 
-  ./build.sh xxx xxx
+  ./build.sh xxx hhh
+  
+where hhh is your hardware configuration from hardware/hhh/flash_params.
+This information you can get with:
+
+  disklabel /dev/wd0a (pick the device shown as flash in 'dmesg')
   
 mount it and test it in the chroot
 
