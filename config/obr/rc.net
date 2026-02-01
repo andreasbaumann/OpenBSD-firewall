@@ -24,7 +24,7 @@ ifconfig bridge0 up
 
 # athn0: wireless bridged to LAN
 
-ifconfig athn0 mode 11g chan 13 mediaopt hostap nwid Fornost wpakey wfpwd@home wpaprotos wpa2 up
+ifconfig athn0 mode 11n chan 13 mediaopt hostap nwid Fornost wpakey wfpwd@home wpaprotos wpa2 up
 
 ifconfig bridge0 add athn0
 
