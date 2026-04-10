@@ -20,3 +20,7 @@
   https://www.mail-archive.com/arm@openbsd.org/msg02144.html
   https://www.mail-archive.com/arm@openbsd.org/msg02145.html
   or we simply don't have enough RAM on the Alix to run it?
+- [1775831178] unbound[85097:0] warning: setsockopt(..., SO_SNDBUF, ...) was not granted: No buffer space available
+  [1775831178] unbound[85097:0] warning: so-sndbuf 4194304 was not granted. Got 9216. To fix: start with root permissions(linux) or sysctl bigger net.core.wmem_max(linux) or kern.ipc.maxsockbuf(bsd) values. or set so-sndbuf: 0 (use system value).
+  [1775831178] unbound[85097:0] warning: setsockopt(..., SO_SNDBUF, ...) was not granted: No buffer space available
+  [1775831178] unbound[85097:0] warning: so-sndbuf 4194304 was not granted. Got 9216. To fix: start with root permissions(linux) or sysctl bigger net.core.wmem_max(linux) or kern.ipc.maxsockbuf(bsd) values. or set so-sndbuf: 0 (use system value).
