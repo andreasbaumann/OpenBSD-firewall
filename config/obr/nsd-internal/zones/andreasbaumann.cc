@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. root.andreasbaumann.cc. (
-				2024012001	; serial
+				2026040500	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -30,4 +30,4 @@ www			A	192.168.1.15
 git			A	192.168.1.15
 archlinux32		A	192.168.1.15
 mon			A	192.168.1.15
-
+gaming			A	192.168.1.15

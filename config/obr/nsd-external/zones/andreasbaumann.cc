@@ -3,7 +3,7 @@
 $TTL 60
 
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2022102300	; serial
+				2025040500	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -37,3 +37,4 @@ webmail		IN	A		83.150.2.48
 git		IN	A		83.150.2.48
 mon		IN	A		83.150.2.48
 archlinux32	IN	A		83.150.2.48
+gaming		IN	A		83.150.2.48
