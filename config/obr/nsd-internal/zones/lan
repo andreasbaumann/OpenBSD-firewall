@@ -2,14 +2,12 @@
 
 $ORIGIN .
 
-$TTL 60
-
 lan	IN		SOA	obr.lan. root.obr.lan. (
-				2024122100	; serial
+				2026072000	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
-				60		; minimum TTL
+				1h		; minimum TTL
 			)
 
 			IN	NS		obr.lan.

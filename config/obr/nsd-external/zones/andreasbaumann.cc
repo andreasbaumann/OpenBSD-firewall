@@ -1,13 +1,11 @@
 ; external view of zone andreasbaumann.cc
 
-$TTL 60
-
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2025040500	; serial
+				2026072000	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
-				60		; minimum TTL
+				1h		; minimum TTL
 			)
 
 		IN	NS		uz588h0rhwuu3cc03gm9uckw0w42cqr459wn1nxrbzhym2wd81zydb.pro.ns.buddyns.com.
@@ -37,4 +35,3 @@ webmail		IN	A		83.150.2.48
 git		IN	A		83.150.2.48
 mon		IN	A		83.150.2.48
 archlinux32	IN	A		83.150.2.48
-gaming		IN	A		83.150.2.48

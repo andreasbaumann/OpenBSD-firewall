@@ -1,13 +1,11 @@
 ; internal view of zone andreasbaumann.cc
 
-$TTL 60
-
 @		IN	SOA	ns.andreasbaumann.cc. root.andreasbaumann.cc. (
-				2026040500	; serial
+				2026072000	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
-				60		; minimum TTL
+				1h		; minimum TTL
 			)
 
 	IN	NS		ns.andreasbaumann.cc.

@@ -1,13 +1,11 @@
 ; external view of zone patrick-frey.org
 
-$TTL 60
-
 @		IN	SOA	ns.patrick-frey.org. admin.patrick-frey.org. (
-				2024042100	; serial
+				2026072001	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
-				60		; minimum TTL
+				1h		; minimum TTL
 			)
 
 	IN	NS		d.ns.buddyns.com.
