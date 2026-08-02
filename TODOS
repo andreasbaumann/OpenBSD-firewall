@@ -1,3 +1,15 @@
+- persistent DHCP and NTP dbs:
+=> move /etc/dhcpd.conf /etc/dhcpd/etc/dhcpd.conf
+   mkdir /etc/dhcpd/db
+=> run using /etc/dhcpd/etc/dhcpd.conf config
+dhcp db save and restore in openbsd-firewall
+=> on shutdown, do a rw and write /var/db/dhcpd.leases
+   to /etc/dhcpd/db
+=> on startup, check first if there is a /etc/dhcpd/db/dhcpd.leases
+   and if so, copy it back
+
+do the same for the ntp drift file
+
 - fsck should run maybe on startup, at least if we have errors, otherwise
   the 'rw' alias will fail
 - VPN with wireguard
