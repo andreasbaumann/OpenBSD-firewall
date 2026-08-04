@@ -16,3 +16,5 @@ HOME=/var/log
 # send log file notifications, if necessary
 #1-59	*	*	*	*	/usr/bin/newsyslog -m
 #
+# save DHCP lease database every hour
+10	*	*	*	*	/usr/sbin/save_dhcpd_db

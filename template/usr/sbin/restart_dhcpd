@@ -3,8 +3,14 @@
 echo "dhcpd: stopping ..."
 pkill dhcpd
 sleep 3
+mount -o rw,noatime /
+cp /var/db/dhcpd.leases /etc/dhcpd/db/.
+sync && mount -o ro /
+sleep 3
 
 echo "dhcpd: restarting ..."
-/usr/sbin/dhcpd -c /etc/dhcpd.conf vr2 
+cp /etc/dhcpd/db/dhcpd.leases /var/db/.
+chown _dhcp:_dhcp /var/db/dhcpd.leases
+/usr/sbin/dhcpd -c /etc/dhcpd/etc/dhcpd.conf em1 vlan2 vlan3
 
 echo "dhcpd: running."
