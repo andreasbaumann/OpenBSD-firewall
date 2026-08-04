@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mount -o rw,noatime /
+cp /var/db/dhcpd.leases /etc/dhcpd/db/.
+sync && mount -o ro /
