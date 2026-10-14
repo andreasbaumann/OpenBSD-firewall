@@ -1,18 +1,19 @@
 ; internal LAN
 
-$ORIGIN .
+$ORIGIN 1.168.192.in-addr.arpa.
 
-1.168.192.in-addr.arpa	IN SOA	obr.lan. root.obr.lan. (
-				2026072000	; serial
+$TTL 1h
+
+@		IN SOA	obr.lan. root.obr.lan. (
+				2026101400	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
 				1h		; minimum TTL
 			)
 
-			IN	NS		obr.lan.
+		IN	NS		obr.lan.
 
-$ORIGIN 1.168.192.in-addr.arpa.
 
 1		IN	PTR	obr.lan.
 2		IN	PTR	europa1.lan.
@@ -55,4 +56,6 @@ $ORIGIN 1.168.192.in-addr.arpa.
 44		IN	PTR	euronuc.lan.
 45		IN	PTR	euronuc-i486.lan.
 46		IN	PTR	euroradio.lan.
+47		IN	PTR	europrot.lan.
+48		IN	PTR	eurowebnew.lan.
 254		IN	PTR	wrt1.lan.

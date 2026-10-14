@@ -1,7 +1,11 @@
 ; external view of zone patrick-frey.org
 
+$ORIGIN patrick-frey.org.
+
+$TTL 1h
+
 @		IN	SOA	ns.patrick-frey.org. admin.patrick-frey.org. (
-				2026072001	; serial
+				2026072100	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -11,9 +15,6 @@
 	IN	NS		d.ns.buddyns.com.
 	IN	NS		f.ns.buddyns.com.
 	IN	NS		h.ns.buddyns.com.
-
-
-$ORIGIN patrick-frey.org.
 
 	IN	A		83.150.2.48
 

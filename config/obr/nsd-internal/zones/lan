@@ -1,18 +1,18 @@
 ; internal LAN
 
-$ORIGIN .
+$ORIGIN lan.
 
-lan	IN		SOA	obr.lan. root.obr.lan. (
-				2026072000	; serial
+$TTL 1h
+
+@	IN		SOA	obr.lan. root.obr.lan. (
+				2026101400	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
 				1h		; minimum TTL
 			)
 
-			IN	NS		obr.lan.
-
-$ORIGIN lan.
+		IN	NS		obr.lan.
 
 obr			A		192.168.1.1
 europa1			A		192.168.1.2
@@ -55,5 +55,7 @@ eurobuild14		A		192.168.1.43
 euronuc			A		192.168.1.44
 euronuc-i486		A		192.168.1.45
 euroradio		A		192.168.1.46
+europrot		A		192.168.1.47
+eurowebnew		A		192.168.1.48
 wrt1			A		192.168.1.254
 iway-gateway		A		83.150.2.1

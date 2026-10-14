@@ -1,7 +1,11 @@
 ; internal view of zone andreasbaumann.cc
 
+$ORIGIN andreasbaumann.cc.
+
+$TTL 1h
+
 @		IN	SOA	ns.andreasbaumann.cc. root.andreasbaumann.cc. (
-				2026072000	; serial
+				2026083100	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -12,7 +16,6 @@
 	IN	MX	10	smtp.andreasbaumann.cc.
 	IN	TXT		"v=spf1 mx ip4:83.150.2.48/24 ~all"
 
-$ORIGIN andreasbaumann.cc.
 
 	IN		A	192.168.1.15
 
@@ -28,4 +31,4 @@ www			A	192.168.1.15
 git			A	192.168.1.15
 archlinux32		A	192.168.1.15
 mon			A	192.168.1.15
-gaming			A	192.168.1.15
+demos			A	192.168.1.15

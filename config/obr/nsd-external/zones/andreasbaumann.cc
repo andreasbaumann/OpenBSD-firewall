@@ -1,7 +1,11 @@
 ; external view of zone andreasbaumann.cc
 
+$ORIGIN andreasbaumann.cc.
+
+$TTL 1h
+
 @		IN	SOA	ns.andreasbaumann.cc. admin.andreasbaumann.cc. (
-				2026072000	; serial
+				2026083100	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -19,8 +23,6 @@ mail._domainkey	IN	TXT		( "v=DKIM1; k=rsa; s=email; "
 					"Z4vIq/yHM8/az5peVoaaFA1A+RVMLvy+o1XbhMBsM7nOnDPcQxPyxBcDmedgbni6F3I8Vl2hYDvcjza5eJ8fJVxjLBVWMYAhRowWzl0TU9nyeHBbncCYW9QiNBicHQy88CAwEAAQ==" )
 _dmarc		IN	TXT		"v=DMARC1; p=none; adkim=s; aspf=r; fo=1; rua=mailto:postmaster@andreasbaumann.cc; ruf=mailto:postmaster@andreasbaumann.cc"
 
-$ORIGIN andreasbaumann.cc.
-
 ns		IN	A		83.150.2.48
 smtp		IN	A		83.150.2.48
 
@@ -35,3 +37,4 @@ webmail		IN	A		83.150.2.48
 git		IN	A		83.150.2.48
 mon		IN	A		83.150.2.48
 archlinux32	IN	A		83.150.2.48
+demos		IN	A		83.150.2.48

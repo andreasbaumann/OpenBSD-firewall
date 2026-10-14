@@ -1,7 +1,11 @@
 ; external view of zone openbsd-firewall.org
 
+$ORIGIN openbsd-firewall.org.
+
+$TTL 1h
+
 @		IN	SOA	ns.openbsd-firewall.org. admin.openbsd-firewall.org. (
-				2026072000	; serial
+				2026072100	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -11,9 +15,6 @@
 	IN	NS		d.ns.buddyns.com.
 	IN	NS		f.ns.buddyns.com.
 	IN	NS		h.ns.buddyns.com.
-
-
-$ORIGIN openbsd-firewall.org.
 
 	IN	A		83.150.2.48
 
