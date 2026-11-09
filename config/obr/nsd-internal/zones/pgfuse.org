@@ -4,7 +4,7 @@ $ORIGIN pgfuse.org.
 $TTL 1h
 
 @		IN	SOA	ns.pgfuse.org. admin.pgfuse.org. (
-				2026072100	; serial
+				2026110100	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -13,8 +13,8 @@ $TTL 1h
 
 	IN		NS	ns.pgfuse.org.
 
-	IN		A	192.168.1.15
+	IN		A	192.168.1.48
 
 ns			A	192.168.1.1
 
-www			A	192.168.1.15
+www			A	192.168.1.48

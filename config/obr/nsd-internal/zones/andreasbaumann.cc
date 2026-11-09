@@ -5,7 +5,7 @@ $ORIGIN andreasbaumann.cc.
 $TTL 1h
 
 @		IN	SOA	ns.andreasbaumann.cc. root.andreasbaumann.cc. (
-				2026083100	; serial
+				2026110300	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -17,18 +17,18 @@ $TTL 1h
 	IN	TXT		"v=spf1 mx ip4:83.150.2.48/24 ~all"
 
 
-	IN		A	192.168.1.15
+	IN		A	192.168.1.48
 
 ns			A	192.168.1.1
 
-cloud			A	192.168.1.15
+cloud			A	192.168.1.48
 ftp			A	192.168.1.9
-imap			A	192.168.1.15
-pop			A	192.168.1.15
-smtp			A	192.168.1.15
-webmail			A	192.168.1.15
-www			A	192.168.1.15
-git			A	192.168.1.15
-archlinux32		A	192.168.1.15
-mon			A	192.168.1.15
-demos			A	192.168.1.15
+imap			A	192.168.1.48
+pop			A	192.168.1.48
+smtp			A	192.168.1.48
+webmail			A	192.168.1.48
+www			A	192.168.1.48
+git			A	192.168.1.48
+archlinux32		A	192.168.1.48
+mon			A	192.168.1.48
+demos			A	192.168.1.48

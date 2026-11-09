@@ -5,7 +5,7 @@ $ORIGIN lan.
 $TTL 1h
 
 @	IN		SOA	obr.lan. root.obr.lan. (
-				2026101400	; serial
+				2026111000	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -25,7 +25,6 @@ eeepc-wifi		A		192.168.1.10
 eurobuild3		A		192.168.1.12
 europa10		A		192.168.1.13
 eurobuild1		A		192.168.1.14
-euroweb			A		192.168.1.15
 euroserver		A		192.168.1.16
 eurohp1			A		192.168.1.17
 eurobuild4		A		192.168.1.18
@@ -56,6 +55,6 @@ euronuc			A		192.168.1.44
 euronuc-i486		A		192.168.1.45
 euroradio		A		192.168.1.46
 europrot		A		192.168.1.47
-eurowebnew		A		192.168.1.48
+euroweb			A		192.168.1.48
 wrt1			A		192.168.1.254
 iway-gateway		A		83.150.2.1
