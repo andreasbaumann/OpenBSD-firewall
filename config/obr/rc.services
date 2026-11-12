@@ -2,7 +2,9 @@ echo nsd: starting authorative name server..
 for view in internal external; do
 	rm -rf /tmp/var/nsd-$view
 	cp -R /etc/nsd-$view /tmp/var/nsd-$view
-	cp -R /etc/nsd-common/zones/* /tmp/var/nsd-$view/zones/.
+	if [ -n "$(ls -A /etc/nsd-common/zones/)" ]; then
+		cp -R /etc/nsd-common/zones/* /tmp/var/nsd-$view/zones/.
+	fi
 	chown -R root:_nsd /tmp/var/nsd-$view/{db,etc,run}
 	chmod 0770 /tmp/var/nsd-$view/{db,run,run/xfr}
 done
