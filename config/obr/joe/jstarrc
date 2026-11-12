@@ -54,6 +54,11 @@
 		Directory to store backup files (one space between 'backpath' and
 		the 'path', no trailing spaces or comments after the path).
 
+ -backup_file_suffix string
+		Suffix string for backup files instead of ~ (one space
+		between backup_file_suffix and the string, no trailing
+		spaces or comments after the string).
+
  -floatmouse	Clicking past end of line moves the cursor past the end
  -rtbutton	Use the right mouse button for action, instead of the left
  -nonotice	Disable copyright notice
@@ -69,7 +74,7 @@
  -helpon	Start with help on
  -skiptop nnn	Don't use top nnn lines of the screen
 
--notite         Don't send terminal initialization and termination strings: prevents
+ -notite        Don't send terminal initialization and termination strings: prevents
                 restoration of screen on exit.
 
  -nolinefeeds	Prevent sending linefeeds to preserve screen history in terminal
@@ -189,7 +194,7 @@
   \l  Italic
 
 -lmsg \i%k%T%W%I%X %n %m%y%R %M
--rmsg  %S Row %4r Col %3c %t  Ctrl-J for help
+-rmsg  %S Row %4r Col %3c  Ctrl-J for help
 -smsg ** Line %r Col %c Offset %o(0x%O) %e %a(0x%A) Width %w ** 
 -zmsg ** Line %r Col %c Offset %o(0x%O) ** 
 -xmsg \i Joe's Own Editor %v (%b) ** Type \bCtrl-K Q\b to exit or \bCtrl-J\b for help **\i
@@ -278,6 +283,8 @@
 
 	-hiline			Highlight current line
 
+	-visiblews		Shows whitespace as special glyphs
+
 	-rdonly			File is read-only
 
 	-keymap name
@@ -312,7 +319,7 @@
 
 	-cpp_comment		Text after // should be ignored
 
-	-pound_comment		Text after # should be ignored
+	-hash_comment		Text after # should be ignored
 
 	-vhdl_comment		Text after -- should be ignored
 
@@ -363,6 +370,7 @@ mode,"indentc",rtn	% % Indent char %Zindentc%
 mode,"istep",rtn	% % Indent step %Zistep%
 menu,"indent",rtn	= Indent select
 mode,"highlight",rtn	H Highlighting %Zhighlight%
+mode,"visiblews",rtn	% % Show whitespace %Zvisiblews%
 mode,"crlf",rtn	Z CR-LF/MS-DOS %Zcrlf%
 mode,"linums",rtn	N Line numbers %Zlinums%
 mode,"hiline",rtn	U Highlight line %Zhiline%
@@ -388,6 +396,7 @@ menu,"global",rtn	% % global options
 menu,"cursor",rtn	% % cursor options
 menu,"marking",rtn	% % marking options
 menu,"tab",rtn	% % tab/indent options
+menu,"debug",rtn	% % debug options
 
 :defmenu indent menu,"root",rtn
 mode,"istep",rtn,"1",rtn,mode,"indentc",rtn,"32",rtn,msg,"Indent step = 1, Indent character = 32",rtn	1 Space
@@ -411,7 +420,7 @@ mode,"single_quoted",rtn	% % ^G ignores '...' %Zsingle_quoted%
 mode,"no_double_quoted",rtn	% % ^G no ignore "..." %Zno_double_quoted%
 mode,"c_comment",rtn	% % ^G ignores /*...*/ %Zc_comment%
 mode,"cpp_comment",rtn	% % ^G ignores //... %Zcpp_comment%
-mode,"pound_comment",rtn	% % ^G ignores #... %Zpound_comment%
+mode,"hash_comment",rtn	% % ^G ignores #... %Zhash_comment%
 mode,"vhdl_comment",rtn	% % ^G ignores --... %Zvhdl_comment%
 mode,"semi_comment",rtn	% % ^G ignores ;... %Zsemi_comment%
 mode,"tex_comment",rtn % % ^G ignores %%... %Ztex_comment%
@@ -453,6 +462,7 @@ mode,"break_links",rtn	% % Break links %Zbreak_links%
 mode,"joe_state",rtn	% % Joe_state file %Zjoe_state%
 mode,"undo_keep",rtn	% % No. undo records %Zundo_keep%
 mode,"backpath",rtn	% % Path to backup files %Zbackpath%
+mode,"backup_file_suffix",rtn	% % Backup file suffix %Zbackup_file_suffix%
 
 :defmenu cursor menu,"more-options",rtn
 mode,"pg",rtn	% % No. PgUp/PgDn lines %Zpg%
@@ -473,6 +483,12 @@ mode,"smartbacks",rtn	% % Smart backspace %Zsmartbacks%
 mode,"indentfirst",rtn	% % To indent first %Zindentfirst%
 mode,"purify",rtn	% % Clean up indents %Zpurify%
 mode,"spaces",rtn	% % No tabs %Zspaces%
+
+:defmenu debug menu,"more-options",rtn
+mode,"syntax_debug",rtn,"0",rtn,retype	% % Syntax debug off (0)
+mode,"syntax_debug",rtn,"1",rtn,retype	% % Syntax debug: states (1)
+mode,"syntax_debug",rtn,"2",rtn,retype	% % Syntax debug: recolor (2)
+mode,"syntax_debug",rtn,"3",rtn,retype	% % Syntax debug: full (3)
 
  THIRD SECTION: Named help screens:
 
@@ -675,6 +691,7 @@ arg		^Q ^Q
 arg		^Q q
 explode		^K I
 explode		^K ^I
+explode		^K ^[ [ 1 0 5 ; 5 u
 explode		^K i
 help		^J
 nmark		^K H
@@ -684,6 +701,7 @@ hnext		^[ .
 hprev		^[ ,
 math		^Q M
 math		^Q ^M
+math		^Q ^[ [ 1 0 9 ; 5 u
 math		^Q m
 msg		^[ H
 msg		^[ ^H
@@ -705,6 +723,7 @@ query		^[ ?
 record		^[ (
 retype		^]
 rtn		^M
+rtn		^[ [ 1 0 9 ; 5 u
 shell		^K Z
 shell		^K ^Z
 shell		^K z
@@ -725,17 +744,19 @@ defmiddledown	MIDDLEDOWN	Insert text
 xtmouse		^[ [ M		Introduces an xterm mouse event
 extmouse	^[ [ <		Introduces an extended xterm mouse event
 
+ CSIu for ^I
+"\t"		^[ [ 1 0 5 ; 5 u
+
 :main			Text editing window
 :inherit windows
 
  Ispell
-:def ispellfile filt,"cat >ispell.tmp;ispell ispell.tmp </dev/tty >/dev/tty;cat ispell.tmp;/bin/rm ispell.tmp",rtn,retype
-:def ispellword psh,nextword,markk,prevword,markb,filt,"cat >ispell.tmp;ispell ispell.tmp </dev/tty >/dev/tty;tr -d <ispell.tmp '\\012';/bin/rm ispell.tmp",rtn,retype,nextword
+:def ispellfile filt,"SPLTMP=\"$(mktemp -p '' joeXXXXXX)\"cat >$SPLTMP;ispell $SPLTMP </dev/tty >/dev/tty;cat $SPLTMP;/bin/rm $SPLTMP",rtn,retype
+:def ispellword psh,nextword,markk,prevword,markb,filt,"SPLTMP=\"$(mktemp -p '' joeXXXXXX)\"cat >$SPLTMP;ispell $SPLTMP </dev/tty >/dev/tty;tr -d <$SPLTMP '\\012';/bin/rm $SPLTMP",rtn,retype,nextword
 
  Aspell
-:def aspellfile filt,"SPLTMP=ispell.tmp;cat >$SPLTMP;aspell --lang=",language,".",charset," -x -c $SPLTMP </dev/tty >/dev/tty;cat $SPLTMP;/bin/rm $SPLTMP",rtn,retype
-:def aspellword psh,nextword,markk,prevword,markb,filt,"SPLTMP=ispell.tmp;cat >$SPLTMP;aspell --lang=",language,".",charset," -x -c $SPLTMP </dev/tty >/dev/tty;tr -d <$SPLTMP '\\012';/bin/rm $SPLTMP",rtn,retype,nextword
-
+:def aspellfile filt,"SPLTMP=\"$(mktemp -p '' joeXXXXXX)\";cat >$SPLTMP;aspell --lang=",language,".",charset," -x -c $SPLTMP </dev/tty >/dev/tty;cat $SPLTMP;/bin/rm $SPLTMP",rtn,retype
+:def aspellword psh,nextword,markk,prevword,markb,filt,"SPLTMP=\"$(mktemp -p '' joeXXXXXX)\";cat >$SPLTMP;aspell --lang=",language,".",charset," -x -c $SPLTMP </dev/tty >/dev/tty;tr -d <$SPLTMP '\\012';/bin/rm $SPLTMP",rtn,retype,nextword,pop
 
 ispellfile	^Q l
 ispellfile	^Q L
@@ -784,6 +805,89 @@ ispellword	^Q ^N
  :def shell2 if,"is_shell==0",then,tw1,mfit,endif,scratch,"* Shell 2 *",rtn,vtbknd!,eof
  :def shell3 if,"is_shell==0",then,tw1,mfit,endif,scratch,"* Shell 3 *",rtn,vtbknd!,eof
  :def shell4 if,"is_shell==0",then,tw1,mfit,endif,scratch,"* Shell 4 *",rtn,vtbknd!,eof
+
+ Ctrl, Shift and Ctrl-Shift modifiers for cursor keys.  Try to be
+ compatible with modern GUI text editors:
+
+ New Ctrl-
+
+upslide		^[ [ 1 ; 5 A	Ctrl-Up
+upslide		^[ O a		rxvt
+dnslide		^[ [ 1 ; 5 B	Ctrl-Down
+dnslide		^[ O b
+nextword	^[ [ 1 ; 5 C	Ctrl-Right
+nextword	^[ O c
+prevword	^[ [ 1 ; 5 D	Ctrl-Left
+prevword	^[ O d
+prevw		^[ [ 5 ; 5 ~	Ctrl-PgUp
+prevw		^[ [ 5 ^	rxvt
+nextw		^[ [ 6 ; 5 ~	Ctrl-PgDn
+nextw		^[ [ 6 ^
+bof		^[ [ 1 ; 5 H	Ctrl-Home
+bof		^[ [ 7 ^
+eof		^[ [ 1 ; 5 F	Ctrl-End
+eof		^[ [ 8 ^
+yank		^[ [ 2 ; 5 -	Gnome-terminal Ctrl-Ins
+yank		^[ [ 2 ; 5 ~    Xterm Ctrl-Ins
+yank		^[ [ 2 ^
+if,"markv",then,blkdel,nmark,else,delw,endif		^[ [ 3 ; 5 ~	Ctrl-Del Delete block or word
+if,"markv",then,blkdel,nmark,else,delw,endif		^[ [ 3 ^
+ delw		^[ [ 3 ; 5 ~	Delete word
+ delw		^[ [ 3 ^
+ blkdel,nmark	^[ [ 3 ; 5 -	Delete block
+ blkdel,nmark	^[ [ 3 ; 5 ~
+
+
+ New Shift-
+
+uparw,dnarw,begin_marking,uparw,toggle_marking	^[ [ 1 ; 2 A    Shift-Up	Mark up line
+uparw,dnarw,begin_marking,uparw,toggle_marking	^[ [ a		rxvt
+dnarw,uparw,begin_marking,dnarw,toggle_marking	^[ [ 1 ; 2 B    Shift-Down	Mark down line
+dnarw,uparw,begin_marking,dnarw,toggle_marking	^[ [ b
+rtarw,ltarw,begin_marking,rtarw,toggle_marking	^[ [ 1 ; 2 C    Shift-Right	Mark right
+rtarw,ltarw,begin_marking,rtarw,toggle_marking	^[ [ c
+ltarw,rtarw,begin_marking,ltarw,toggle_marking	^[ [ 1 ; 2 D    Shift-Left	Mark left
+ltarw,rtarw,begin_marking,ltarw,toggle_marking	^[ [ d
+uparw,dnarw,begin_marking,pgup,toggle_marking	^[ [ 5 ; 2 ~    Shift-PgUp	Mark up page [Usually scrolls back]
+dnarw,uparw,begin_marking,pgdn,toggle_marking	^[ [ 6 ; 2 ~    Shift-PgDn	Mark down page [Usually scrolls forward]
+ltarw,rtarw,begin_marking,bol,toggle_marking	^[ [ 1 ; 2 H    Shift-Home	Mark to bol
+ltarw,rtarw,begin_marking,bol,toggle_marking	^[ [ 7 $ 	Shift-Home	Mark to bol
+rtarw,ltarw,begin_marking,eol,toggle_marking	^[ [ 1 ; 2 F    Shift-End	Mark to eol
+rtarw,ltarw,begin_marking,eol,toggle_marking	^[ [ 8 $ 	Shift-End	Mark to eol
+if,"markv",then,blkdel,nmark,else,dellin,endif		^[ [ 3 ; 2 ~	Ctrl-Del Delete block or line
+if,"markv",then,blkdel,nmark,else,dellin,endif		^[ [ 3 $
+ dellin		^[ [ 3 ; 2 ~	Shift-Del
+ dellin		^[ [ 3 $
+yank		^[ [ 2 ; 2 ~	Shift-Ins [but Shift-Ins usually pastes]
+yank		^[ [ 2 $
+
+ Shift-Ctrl-
+
+ upslide		^[ [ 1 ; 6 A	Shift-Ctrl-Up
+uparw,dnarw,begin_marking,bop,toggle_marking	^[ [ 1 ; 6 A    Mark up paragraph
+ dnslide		^[ [ 1 ; 6 B	Shift-Ctrl-Down
+dnarw,uparw,begin_marking,eop,toggle_marking	^[ [ 1 ; 6 B    Mark down paragraph
+rtarw,ltarw,begin_marking,nextword,toggle_marking	^[ [ 1 ; 6 C    Shift-Ctrl-Right Mark right word
+ltarw,rtarw,begin_marking,prevword,toggle_marking	^[ [ 1 ; 6 D    Shift-Ctrl-Left Mark left word
+
+ Uncomment these if you want JOE to work the old way (Ctrl-cursor marks)
+
+ uparw,dnarw,begin_marking,uparw,toggle_marking	^[ [ 1 ; 5 A    Ctrl-Up Mark up line
+ uparw,dnarw,begin_marking,uparw,toggle_marking	^[ [ 5 A        Old Gnome-terminal
+ uparw,dnarw,begin_marking,uparw,toggle_marking	^[ O a		Rxvt
+
+ dnarw,uparw,begin_marking,dnarw,toggle_marking	^[ [ 1 ; 5 B    Ctrl-Down Mark down line
+ dnarw,uparw,begin_marking,dnarw,toggle_marking	^[ [ 5 B        Mark down
+ dnarw,uparw,begin_marking,dnarw,toggle_marking	^[ O b
+
+ rtarw,ltarw,begin_marking,rtarw,toggle_marking	^[ [ 1 ; 5 C    Ctrl-Right Mark right
+ rtarw,ltarw,begin_marking,rtarw,toggle_marking	^[ [ 5 C
+ rtarw,ltarw,begin_marking,rtarw,toggle_marking	^[ O c
+
+ ltarw,rtarw,begin_marking,ltarw,toggle_marking	^[ [ 1 ; 5 D    Ctrl-Left Mark left
+ ltarw,rtarw,begin_marking,ltarw,toggle_marking	^[ [ 5 D
+ ltarw,rtarw,begin_marking,ltarw,toggle_marking	^[ O d
+
 
 paste			^[ ] 5 2 ;		Base64 paste (obsolete)
 brpaste			^[ [ 2 0 0 ~		Bracketed paste
@@ -890,6 +994,7 @@ center		^K a
 delbol		^Q ^H
 delbol		^Q ^?
 delbol		^Q .kD
+ if,"markv",then,blkdel,nmark,else,delch,endif		.kD		Delete block or character
 delch		.kD		Delete character
 delch		^G
 deleol		^Q Y		Delete to end of line
@@ -948,11 +1053,13 @@ insf		^K ^R
 insf		^K r
 macros		^[ d		Dump macros
 macros		^[ ^D
-mode,"overtype",rtn	^V		Insert/Overtype
-mode,"overtype",rtn	.kI
+mode,"overwrite",rtn	^V		Insert/Overtype
+ yank		.kI		Insert previously deleted
+mode,"overwrite",rtn	.kI
 lindent		^K ,		Indent to left
 line		^Q I		Goto line no.
 line		^Q ^I
+line		^Q ^[ [ 1 0 5 ; 5 u
 line		^Q i
 ltarw		.kl		Go left
 ltarw		^S
@@ -1041,6 +1148,7 @@ shell4		.k4
 :inherit main
 abort		^C
 complete	^I
+complete	^[ [ 1 0 5 ; 5 u
 dnarw,eol	.kd		Go down
 dnarw,eol	^X
 dnarw,eol	^[ O B
@@ -1110,11 +1218,13 @@ rtarwmenu	^[ [ C
 rtarwmenu	^[ O C
 rtn		SP
 rtn		^I
+rtn		^[ [ 1 0 5 ; 5 u
 rtn		^K H
 rtn		^K h
 rtn		^K ^H
 rtn		^J
 tabmenu		^I
+tabmenu		^[ [ 1 0 5 ; 5 u
 uparwmenu	.ku
 uparwmenu	^E
 uparwmenu	^[ [ A
@@ -1136,8 +1246,10 @@ type		U+0 TO U+10FFFF
 ""		^C		Abort
 ""		^D		Eof
 "\t"		^I		Tab
+"\t"		^[ [ 1 0 5 ; 5 u
 ""		^H		Backspace
 "\r"		^M		Return
+"\r"		^[ [ 1 0 9 ; 5 u
 ""		^?		Backspace
 
 :vtshell		Input to ANSI shell windows
@@ -1155,6 +1267,8 @@ type		U+0 TO U+10FFFF
 ""		^D		Eof
 ""		^E		EOL for bash
 "\t"		^I		Tab
+"\t"		^[ [ 1 0 5 ; 5 u
 ""		^H		Backspace
 "\r"		^M		Return
+"\r"		^[ [ 1 0 9 ; 5 u
 ""		^?		Backspace

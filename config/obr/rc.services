@@ -18,7 +18,7 @@ cp -R /etc/unbound /tmp/var/unbound
 echo dhcp: starting DHCP server...
 touch /var/db/dhcpd.leases
 chown _dhcp:_dhcp /var/db/dhcpd.leases
-/usr/sbin/dhcpd -c /etc/dhcpd.conf vr2 
+/usr/sbin/dhcpd -c /etc/dhcpd/etc/dhcpd.conf vr2 
 
 echo ftp-proxy: starting FTP proxy...
 /usr/sbin/ftp-proxy -R 192.168.1.9 -r -p 8021

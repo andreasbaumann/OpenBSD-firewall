@@ -319,8 +319,9 @@ if test -f config/$HOSTNAME/dhcpleased.conf; then
 fi
 
 # when running a DHCP server for the local network
-if test -f config/$HOSTNAME/dhcpd.conf; then
-	cp -R config/$HOSTNAME/dhcpd.conf $MOUNTPOINT/etc/.
+if test -f config/$HOSTNAME/dhcpd/etc/dhcpd.conf; then
+	mkdir -p $MOUNTPOINT/etc/dhcpd/{etc,db}
+	cp -R config/$HOSTNAME/dhcpd/etc/dhcpd.conf $MOUNTPOINT/etc/dhcpd/etc/.
 	cp -R /usr/sbin/dhcpd $MOUNTPOINT/usr/sbin/.
 	cp -R template/usr/sbin/restart_dhcpd $MOUNTPOINT/usr/sbin/.
 fi
