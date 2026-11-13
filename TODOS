@@ -1,23 +1,23 @@
-- persistent DHCP and NTP dbs:
-=> move /etc/dhcpd.conf /etc/dhcpd/etc/dhcpd.conf
-   mkdir /etc/dhcpd/db
-=> run using /etc/dhcpd/etc/dhcpd.conf config
-dhcp db save and restore in openbsd-firewall
-=> on shutdown, do a rw and write /var/db/dhcpd.leases
-   to /etc/dhcpd/db
-=> on startup, check first if there is a /etc/dhcpd/db/dhcpd.leases
-   and if so, copy it back
-
-do the same for the ntp drift file
-
+- template mechanism is too weak, we have:
+   - restart_dhcpd: interface for dhcpd restart is hard coded vr2 (should
+     be a template)
+   - parts are commented out 
+- config/obr/unbound/etc/root.key still there after build
+- we need a switch for the system to be purely read-only, or
+  mostly read-only
+  - ntp.drift
+  - dhcp leases
+  - ntp drift file
+  - persist on shutdown
+  - load on startup
 - fsck should run maybe on startup, at least if we have errors, otherwise
   the 'rw' alias will fail
-- VPN with wireguard
+- VPN
 - strip from debugging symbols binaries and libraries
 - install a customized/optimized kernel (currently we take the one
   from the master/builder)
 - possibility to set root password, for now we copy the one
-  from the builder/master
+  from the builder/master (we can make it part of the /mnt/fw chroot test)
 - minimize and check permissions. passwd and group entires
 - local logging and/or remote logging to monitoring station?
 - sensors

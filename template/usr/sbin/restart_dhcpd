@@ -10,7 +10,8 @@ sleep 3
 
 echo "dhcpd: restarting ..."
 cp /etc/dhcpd/db/dhcpd.leases /var/db/.
+touch /var/db/dhcpd.leases
 chown _dhcp:_dhcp /var/db/dhcpd.leases
-/usr/sbin/dhcpd -c /etc/dhcpd/etc/dhcpd.conf em1 vlan2 vlan3
+/usr/sbin/dhcpd -c /etc/dhcpd/etc/dhcpd.conf vr2
 
 echo "dhcpd: running."

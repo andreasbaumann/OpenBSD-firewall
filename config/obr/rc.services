@@ -2,7 +2,7 @@ echo nsd: starting authorative name server..
 for view in internal external; do
 	rm -rf /tmp/var/nsd-$view
 	cp -R /etc/nsd-$view /tmp/var/nsd-$view
-	if [ -n "$(ls -A /etc/nsd-common/zones/)" ]; then
+	if [ -n "$(ls -A /etc/nsd-common/zones 2>/dev/null)" ]; then
 		cp -R /etc/nsd-common/zones/* /tmp/var/nsd-$view/zones/.
 	fi
 	chown -R root:_nsd /tmp/var/nsd-$view/{db,etc,run}
@@ -16,6 +16,7 @@ cp -R /etc/unbound /tmp/var/unbound
 /usr/sbin/unbound -c /etc/unbound/etc/unbound.conf
 
 echo dhcp: starting DHCP server...
+cp /etc/dhcpd/db/dhcpd.leases /var/db/.
 touch /var/db/dhcpd.leases
 chown _dhcp:_dhcp /var/db/dhcpd.leases
 /usr/sbin/dhcpd -c /etc/dhcpd/etc/dhcpd.conf vr2 
