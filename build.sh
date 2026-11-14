@@ -324,6 +324,7 @@ if test -f config/$HOSTNAME/dhcpd/etc/dhcpd.conf; then
 	cp -R config/$HOSTNAME/dhcpd/etc/dhcpd.conf $MOUNTPOINT/etc/dhcpd/etc/.
 	cp -R /usr/sbin/dhcpd $MOUNTPOINT/usr/sbin/.
 	cp -R template/usr/sbin/restart_dhcpd $MOUNTPOINT/usr/sbin/.
+	cp -R template/usr/sbin/save_dhcpd_db $MOUNTPOINT/usr/sbin/.
 fi
 
 # synchronizing time is always a good idea
@@ -350,6 +351,8 @@ if test -d config/$HOSTNAME/nsd-internal/; then
 	cp -R /usr/sbin/nsd-{checkconf,checkzone,control,control-setup} $MOUNTPOINT/usr/sbin/.
 	nsd-control-setup -d $MOUNTPOINT/etc/nsd-internal/etc
 	cp -R template/usr/sbin/restart_dns $MOUNTPOINT/usr/sbin/.
+	cp -R template/usr/sbin/restart_nsd $MOUNTPOINT/usr/sbin/.
+	cp -R template/usr/sbin/restart_unbound $MOUNTPOINT/usr/sbin/.
 fi
 
 # when we run an authorative name server for public zones (in this
