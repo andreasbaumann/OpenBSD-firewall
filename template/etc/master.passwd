@@ -75,3 +75,4 @@ _geoclue:*:731:731::0:0:GeoClue service user:/nonexistent:/sbin/nologin
 _dhcp6leased:*:116:116::0:0:DHCP6Lease Daemon:/var/empty:/sbin/nologin
 _fc-cache:*:36:36::0:0:Font configuration cache:/var/empty:/sbin/nologin
 _lldpd:*:119:119::0:0:LLDP Daemon:/var/empty:/sbin/nologin
+_rtrd:*:121:121::0:0:RPKI-to-Router Daemon:/var/empty:/sbin/nologin

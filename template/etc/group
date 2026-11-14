@@ -96,3 +96,4 @@ _shutdown:*:118:
 _dhcp6leased:*:116:
 _fc-cache:*:36:
 _lldpd:*:119:
+_rtrd:*:121:
