@@ -13,6 +13,7 @@
 - fsck should run maybe on startup, at least if we have errors, otherwise
   the 'rw' alias will fail
 - VPN
+  - maybe redirect to a dedicated OpenVPN/Wiregaurd instance intern
 - strip from debugging symbols binaries and libraries
 - install a customized/optimized kernel (currently we take the one
   from the master/builder)
@@ -20,19 +21,42 @@
   from the builder/master (we can make it part of the /mnt/fw chroot test)
 - minimize and check permissions. passwd and group entires
 - local logging and/or remote logging to monitoring station?
+  - pflogd is copied to the image by build.sh but never started, and
+    pf.conf has no 'log' keyword anywhere, also, what would we log (drops?
+    bruteforce hits? ssh rate limit hits?)
 - sensors
 - SNMP
-- /etc/named
-- sshd
-  - which key to use for sshd? ssh_host_rsa_key is commented out in 5.9
-- /etc/moduli: should it be generated for every new installation?
-- dead relayd, no clue why
-- dead sshd: UVM: pid PPPP (login_passwd), uid 0 killed: out of swap
-  https://www.mail-archive.com/arm@openbsd.org/msg02168.html
-  https://www.mail-archive.com/arm@openbsd.org/msg02144.html
-  https://www.mail-archive.com/arm@openbsd.org/msg02145.html
-  or we simply don't have enough RAM on the Alix to run it?
 - [1775831178] unbound[85097:0] warning: setsockopt(..., SO_SNDBUF, ...) was not granted: No buffer space available
   [1775831178] unbound[85097:0] warning: so-sndbuf 4194304 was not granted. Got 9216. To fix: start with root permissions(linux) or sysctl bigger net.core.wmem_max(linux) or kern.ipc.maxsockbuf(bsd) values. or set so-sndbuf: 0 (use system value).
   [1775831178] unbound[85097:0] warning: setsockopt(..., SO_SNDBUF, ...) was not granted: No buffer space available
   [1775831178] unbound[85097:0] warning: so-sndbuf 4194304 was not granted. Got 9216. To fix: start with root permissions(linux) or sysctl bigger net.core.wmem_max(linux) or kern.ipc.maxsockbuf(bsd) values. or set so-sndbuf: 0 (use system value).
+- pf filtering
+  - set block-policy drop (default 'return' leaks that we're blocking)
+  - scrub: add max-mss 1440 and set reassemble yes
+  - antispoof is only on $ext_if, not on int_if/DMZ_if/WLAN_if
+  - rate-limit inbound ICMP echoreq (tag + max-pkt-rate), same idea as
+    the ssh bruteforce throttling
+  - confine LAN/DMZ/WLAN clients to our own resolver: block outbound
+    53/853 to anything but ourselves (right now any device can bypass
+    unbound/nsd entirely)
+  - DMZ_if/int_if/WLAN_if are bridged together at L2 (rc.net) - DMZ
+    isn't actually isolated from LAN, pf rules on $DMZ_if are moot
+  - add pfctl -nf validation step to build.sh before a config is baked in
+  - rate limiting pings
+- unbound
+  - DNSSEC validation is disabled: auto-trust-anchor-file is commented
+    out in config/obr/unbound/etc/unbound.conf - re-enable it
+  - optional: prefetch: yes, cache-min-ttl, serve-expired: yes
+- secrets
+  - wifi wpakey is committed in plaintext in config/obr/rc.net, and this
+    repo auto-mirrors to public github - move secrets to a local,
+    untracked overlay file build.sh sources, not the tracked config
+- update/management UI
+  - TFTP/PXE update roadmap item: a separate management box could host
+    both the TFTP update images and a git-backed pf.conf store, pushing
+    rendered config over ssh/sftp and running pfctl -f remotely - keeps
+    the appliance itself unchanged/minimal, matches our no-web-ui-on-the-
+    firewall stance
+  - rule auditing as a standing practice (shadowed rules, overly
+    permissive rules) - the pf.conf rule-order bug above is exactly the
+    kind of thing this would catch automatically
