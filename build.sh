@@ -401,8 +401,8 @@ pwd_mkdb -p -d $MOUNTPOINT/etc/ $MOUNTPOINT/etc/master.passwd
 
 echo "Generating SSH keys."
 
-ssh-keygen -b 2048 -t rsa -f $MOUNTPOINT/etc/ssh/ssh_host_rsa_key -N ''
-chmod 400 $MOUNTPOINT/etc/ssh/ssh_host_rsa_key
+ssh-keygen -A -f $MOUNTPOINT
+chmod 400 $MOUNTPOINT/etc/ssh/ssh_host_*_key
 
 echo "Cleaning up."
 
