@@ -5,7 +5,7 @@ $ORIGIN 1.168.192.in-addr.arpa.
 $TTL 1h
 
 @		IN SOA	obr.lan. root.obr.lan. (
-				2026111000	; serial
+				2026116000	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -17,6 +17,8 @@ $TTL 1h
 
 1		IN	PTR	obr.lan.
 2		IN	PTR	europa1.lan.
+3		IN	PTR	europower1.lan.
+4		IN	PTR	europower2.lan.
 5		IN	PTR	eurobuild2.lan.
 6		IN	PTR	europa5.lan.
 7		IN	PTR	europa6.lan.
