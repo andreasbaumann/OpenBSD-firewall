@@ -190,7 +190,7 @@ At Eurospider we had Portwell NAR-2054 (3 and 5 ethernet port versions),
 some have VGA ports and USBs, others only COMs, so make sure we always 
 get boot output on COM.
 
-It ran on a Soekris net6501 for 4 years.
+It ran on a Soekris net6501 for 4 years, then the Soekris died.
 
 Newer versions run on a Network LES of Thomas Krenn now.
 
@@ -208,7 +208,7 @@ Use COM1 and /tmp/serial, host pipe, create pipe in VirtualBox, then:
 
   socat unix-connect:/tmp/serial stdio,raw,echo=0,icanon=0
 
-The network devices is 'em0' not 'reX' on VirtualBox (as opposed to the real box, at the time of writting there is no Realtek ethernet card emulated in VirtualBox).
+The network devices is 'em0' not 'reX' on VirtualBox (as opposed to the real box, at the time of writing there is no Realtek ethernet card emulated in VirtualBox).
 Troubleshooting
 DMA issues
 
