@@ -5,7 +5,7 @@ $ORIGIN lan.
 $TTL 1h
 
 @	IN		SOA	obr.lan. root.obr.lan. (
-				2026111600	; serial
+				2026111700	; serial
 				3h		; refresh
 				15m		; retry
 				2w		; expire
@@ -58,5 +58,6 @@ euronuc-i486		A		192.168.1.45
 euroradio		A		192.168.1.46
 europrot		A		192.168.1.47
 euroweb			A		192.168.1.48
+euroservernew		A		192.168.1.49
 wrt1			A		192.168.1.254
 iway-gateway		A		83.150.2.1
